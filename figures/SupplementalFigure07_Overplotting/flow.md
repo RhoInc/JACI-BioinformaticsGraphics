@@ -1,7 +1,7 @@
 Scatterplot Flow
 ================
 A Calatroni & J Wildfire
-27 February, 2017
+01 March, 2017
 
 -   [set path](#set-path)
 -   [packages](#packages)
@@ -53,10 +53,12 @@ ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +
   geom_point(col='gray50', size=0.7) +
   scale_y_log10(
     breaks = trans_breaks("log10", function(x) 10^x),
-    labels = trans_format("log10", math_format(10^.x))) +
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
   scale_x_log10(
     breaks = trans_breaks("log10", function(x) 10^x),
-    labels = trans_format("log10", math_format(10^.x))) +
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
   labs(x="CD63", y="CD203c",
        title = "Transformation: log axis") +
   theme_minimal() + 
@@ -72,10 +74,12 @@ ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +
   geom_point(col='gray50', size=0.7, alpha=1/100) +
   scale_y_log10(
     breaks = trans_breaks("log10", function(x) 10^x),
-    labels = trans_format("log10", math_format(10^.x))) +
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
   scale_x_log10(
     breaks = trans_breaks("log10", function(x) 10^x),
-    labels = trans_format("log10", math_format(10^.x))) +
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
   labs(x="CD63", y="CD203c",
        title = "Transformation: alpha blending") +
   theme_minimal() + 
@@ -122,10 +126,12 @@ ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +
   scale_fill_distiller(palette = "Blues", direction=1, guide=FALSE) +
   scale_y_log10(
     breaks = trans_breaks("log10", function(x) 10^x),
-    labels = trans_format("log10", math_format(10^.x))) +
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
   scale_x_log10(
     breaks = trans_breaks("log10", function(x) 10^x),
-    labels = trans_format("log10", math_format(10^.x))) +
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
   labs(x="CD63", y="CD203c",
        title = "Trasformations: Hexagons Binning") +
   theme_minimal() + 
@@ -138,15 +144,17 @@ ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +
 
 ``` r
 ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +  
-  geom_point(col='gray50', size=0.7, alpha=1/100) +
+  geom_point(col='gray50', size=0.01, alpha=1/100) +
   stat_density2d(aes(fill = ..level..), contour=TRUE, color='gray50', geom="polygon") +
   scale_fill_distiller(palette = "Blues", direction=1, guide=FALSE) + 
   scale_y_log10(
     breaks = trans_breaks("log10", function(x) 10^x),
-    labels = trans_format("log10", math_format(10^.x))) +
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
   scale_x_log10(
     breaks = trans_breaks("log10", function(x) 10^x),
-    labels = trans_format("log10", math_format(10^.x))) +
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
   labs(x="CD63", y="CD203c",
        title = "Transformation: Contours") +
   theme_minimal() + 
@@ -160,20 +168,26 @@ ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +
 ``` r
 df2 <- df1 %>% unnest(data) %>% filter(FITC.A >0, PE.A>0)
 ggplot(df2,aes(FITC.A,PE.A)) +
-  geom_point(col='gray50', size=0.7, alpha=1/100) +
+  geom_point(col='gray50', size=0.01, alpha=1/100) +
   stat_density2d(aes(fill = ..level..), contour=TRUE, color='gray50', geom="polygon") +
   scale_fill_distiller(palette = "Blues", direction=1, guide=FALSE) + 
   scale_y_log10(
     breaks = trans_breaks("log10", function(x) 10^x),
-    labels = trans_format("log10", math_format(10^.x))) +
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
   scale_x_log10(
     breaks = trans_breaks("log10", function(x) 10^x),
-    labels = trans_format("log10", math_format(10^.x))) +
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
   labs(x="CD63", y="CD203c",
        title = "Expand: Facets") +
   theme_minimal() + 
   theme(aspect.ratio=1)+
   facet_grid(arm_name~planned_visit_name)
 ```
+
+    ## Warning: Removed 3 rows containing non-finite values (stat_density2d).
+
+    ## Warning: Removed 3 rows containing missing values (geom_point).
 
 ![](flow_files/figure-markdown_github/unnamed-chunk-10-1.png)
