@@ -14,7 +14,7 @@ Report combining [code and results](https://github.com/RhoInc/JACI-Bioinformatic
 ### Supplemental Figure 2 - Sample workflow for visualizing bioinformatics data
 
 Report combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/histograms/histograms.md) for the Histogram example in the manuscript. We also created additional reports combining code and results.
-- [Box and Whisker plots](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/bwplot/bwplot.md)
+- [Boxplots](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/bwplot/bwplot.md)
 - [Density plots](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/densityplot/densityplot.md)
 - [Dot plots](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/dotplot/dotplot.md)
 - [Histograms](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/histograms/histograms.md)
@@ -25,7 +25,12 @@ Report combining [code and results](https://github.com/RhoInc/JACI-Bioinformatic
  
 ### Supplemental Figure 5 - Color Brewer palettes for effective color selection
  
-The R Code to initialize the interactive tool is included in the last section of this [file](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure04_ColorBrewer/ColorBrewer.md). Simply load the `tmaptools` R library (`pacman::p_load(tmaptools)`) and then call the `palette_explorer()` method. 
+The R Code to initialize the interactive tool is included in the last section of this [file](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure04_ColorBrewer/ColorBrewer.md). Simply run the following code:  
+```
+install.packages('tmaptools')  
+library(tmaptools)
+palette_explorer()
+```
 
 ### Supplemental Figure 6: Visualization Case Study for Oral Immunotherapy
 
