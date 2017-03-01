@@ -13,10 +13,11 @@ Report combining [code and results](https://github.com/RhoInc/JACI-Bioinformatic
 
 ### Supplemental Figure 2 - Sample workflow for visualizing bioinformatics data
 
-Report combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/histograms/histograms.md) for the Histogram example in the manuscript. Additional reports combining code and results for examples using:
+Report combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/histograms/histograms.md) for the Histogram example in the manuscript. We also created additional reports combining code and results.
 - [Box and Whisker plots](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/bwplot/bwplot.md)
 - [Density plots](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/densityplot/densityplot.md)
 - [Dot plots](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/dotplot/dotplot.md)
+- [Histograms](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure02_WorkflowExamples/histograms/histograms.md)
 
 ### Supplemental Figure 4 - Color Brewer palettes for effective color selection
 
