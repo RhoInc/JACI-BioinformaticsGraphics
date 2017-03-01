@@ -28,20 +28,20 @@ The R Code to initialize the interactive tool is included in the last section of
 
 ## Supplemental Figure 6: Visualization Case Study for Oral Immunotherapy
 
-Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure06_ClinicalCaseStudy/clinical.md) for the figure created using [Immport OIT Data](#Data).
+Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure06_ClinicalCaseStudy/clinical.md) for the figure created using Immport OIT Data.
  
 ## Supplemental Figure 7 - Methods for Addressing Overplotting using Egg Oral Immunotherapy data
 
-Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure07_Overplotting/flow.md) for the figure created using [Immport OIT Data](#Data).
+Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure07_Overplotting/flow.md) for the figure created using Immport OIT Data.
 
 ## Supplemental Figure 8 - Sample Scatterplot Matrix with Egg Oral Immunotherapy data
 
-Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/tree/master/figures/SupplementalFigure08_ScatterPlotMatrix) for the figure created using [Immport OIT Data](#Data).
+Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/tree/master/figures/SupplementalFigure08_ScatterPlotMatrix) for the figure created using Immport OIT Data.
 
 ## Supplemental Figure 9 - Sample Heatmap with Egg Oral Immunotherapy data
 
-Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure09_Heatmap/levelplot.md) for the figure created using [Immport OIT Data](#Data).
+Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure09_Heatmap/levelplot.md) for the figure created using Immport OIT Data.
 
 ## Supplemental Figure 10 – Demonstration of Dimension Reduction Techniques with Egg Oral Immunotherapy data
 
-Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure10_PCA/pca.md) for the figure created using [Immport OIT Data](#Data).
+Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure10_PCA/pca.md) for the figure created using Immport OIT Data.
