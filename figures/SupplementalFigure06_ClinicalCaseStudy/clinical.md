@@ -1,7 +1,7 @@
 Clinical
 ================
 A Calatroni & J Wildfire
-28 February, 2017
+04 May, 2017
 
 -   [set path](#set-path)
 -   [packages](#packages)
@@ -48,7 +48,7 @@ xyplot(value ~ factor(visno) | trttrue, data=dd %>% filter(variable == 'cd63pos2
                     y = list(alternating = 3)),
        between = list(x=0.5, y=0.5),
        xlab = NULL,
-       ylab = dd %>% filter(variable == 'cd63pos2') %>% slice(1) %>% select(label),
+       ylab = "% CD63 Expression \n 1 mcg/mL Egg",
        panel = function(x,y,...){
          bs <- beeswarm(round(y,0)~x, do.plot=F, corral='none', side=1, spacing=4)
          panel.grid(h=-1,v=0)
@@ -75,7 +75,7 @@ xyplot(value ~ factor(visno) | trttrue, data=dd %>% filter(variable == 'cd63pos2
                     y = list(alternating = 3)),
        between = list(x=0.5, y=0.5),
        xlab = NULL,
-       ylab = dd %>% filter(variable == 'cd63pos2') %>% slice(1) %>% select(label),
+       ylab = "% CD63 Expression \n 1 mcg/mL Egg",
        legend = list(top=list(fun=grid::textGrob("P-Value", x=1.06)),
                      right = list(fun = draw.colorkey,
                                   args = list(key = list(col = rev(pal), at = seq(0,1,length=6), 
@@ -125,7 +125,7 @@ useOuterStrips(
          scale = list(x = list(alternating = 1, tck=c(1,0)),
                       y = list(alternating = 2, tck=c(0,1))),
          between = list(x=0.5, y=0.5),
-         ylab="CD63 +",
+         ylab = "% CD63 Expression",
          xlab = NULL,
          legend = list(top=list(fun=grid::textGrob("P-Value", x=1.06)),
                        right = list(fun = draw.colorkey,
@@ -174,7 +174,7 @@ xyplot(value ~ factor(visno) | trttrue * reorder(label,value), data=dd,
        scale = list(x = list(alternating = 1, tck=c(1,0)),
                     y = list(alternating = 2, tck=c(0,1))),
        between = list(x=0.5, y=0.5),
-       ylab="CD63 +",
+       ylab = "% CD63 Expression",
        xlab = NULL,
        legend = list(top=list(fun=grid::textGrob("P-Value", x=1.06)),
                      right = list(fun = draw.colorkey,
