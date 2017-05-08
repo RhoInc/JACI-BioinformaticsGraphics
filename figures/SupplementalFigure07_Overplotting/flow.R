@@ -9,10 +9,15 @@
 
 #' ### set path 
 knitr::opts_knit$set(root.dir = '../..')
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = NA)
 
 #' ### packages
 pacman::p_load(tidyverse, rio)
 pacman::p_load(scales)
+
+#' ### citation
+citation("ggplot2", auto = FALSE) %>% 
+  toBibtex()
 
 #' ### import data
 df1 <- import("./data/derive/egg_flow_data.rds") 
