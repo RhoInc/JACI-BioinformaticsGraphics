@@ -7,8 +7,20 @@
 #'      toc: true
 #' ---
 
+#' ### set defaults 
+knitr::opts_knit$set(root.dir = '../..')
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = NA)
+
 #' ### packages
 pacman::p_load(lattice, latticeExtra, grid, reshape2)
+pacman::p_load(tidyverse)
+
+#' ### citation
+citation("lattice", auto = FALSE) %>% 
+  toBibtex()
+
+citation("reshape2", auto = FALSE) %>% 
+  toBibtex()
 
 #' ### data
 data(anscombe)

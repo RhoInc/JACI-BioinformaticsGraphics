@@ -1,18 +1,61 @@
 Anscombe Data
 ================
 A Calatroni & J Wildfire
-27 February, 2017
+08 May, 2017
 
+-   [set defaults](#set-defaults)
 -   [packages](#packages)
+-   [citation](#citation)
 -   [data](#data)
 -   [reshape](#reshape)
 -   [figure](#figure)
+
+### set defaults
+
+``` r
+knitr::opts_knit$set(root.dir = '../..')
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = NA)
+```
 
 ### packages
 
 ``` r
 pacman::p_load(lattice, latticeExtra, grid, reshape2)
+pacman::p_load(tidyverse)
 ```
+
+### citation
+
+``` r
+citation("lattice", auto = FALSE) %>% 
+  toBibtex()
+```
+
+    @Book{,
+      title = {Lattice: Multivariate Data Visualization with R},
+      author = {Deepayan Sarkar},
+      publisher = {Springer},
+      address = {New York},
+      year = {2008},
+      note = {ISBN 978-0-387-75968-5},
+      url = {http://lmdvr.r-forge.r-project.org},
+    }
+
+``` r
+citation("reshape2", auto = FALSE) %>% 
+  toBibtex()
+```
+
+    @Article{,
+      title = {Reshaping Data with the {reshape} Package},
+      author = {Hadley Wickham},
+      journal = {Journal of Statistical Software},
+      year = {2007},
+      volume = {21},
+      number = {12},
+      pages = {1--20},
+      url = {http://www.jstatsoft.org/v21/i12/},
+    }
 
 ### data
 
@@ -50,4 +93,4 @@ xyplot(y~x|var2,data=anscombe.c,
 )
 ```
 
-![](anscombe_files/figure-markdown_github/unnamed-chunk-4-1.png)
+![](anscombe_files/figure-markdown_github/unnamed-chunk-6-1.png)
