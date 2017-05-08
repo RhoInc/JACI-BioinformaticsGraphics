@@ -9,11 +9,16 @@
 
 #' ### set path 
 knitr::opts_knit$set(root.dir = '../..')
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = NA)
 
 #' ### packages
 pacman::p_load(tidyverse, rio)
 pacman::p_load(lattice, latticeExtra, grid)
 pacman::p_load(beeswarm)
+
+#' ### citation
+#' Further details and examples can be found in the package author [website](http://www.cbs.dtu.dk/~eklund/beeswarm/)
+#'  
 
 #' ### import data
 dd <- import("./data/derive/egg_baso_data.rds") %>% 

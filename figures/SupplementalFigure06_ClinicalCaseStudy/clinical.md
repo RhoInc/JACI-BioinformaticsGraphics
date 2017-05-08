@@ -1,10 +1,11 @@
 Clinical
 ================
 A Calatroni & J Wildfire
-04 May, 2017
+08 May, 2017
 
 -   [set path](#set-path)
 -   [packages](#packages)
+-   [citation](#citation)
 -   [import data](#import-data)
 -   [figure 1](#figure-1)
 -   [figure 2](#figure-2)
@@ -15,6 +16,7 @@ A Calatroni & J Wildfire
 
 ``` r
 knitr::opts_knit$set(root.dir = '../..')
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = NA)
 ```
 
 ### packages
@@ -24,6 +26,10 @@ pacman::p_load(tidyverse, rio)
 pacman::p_load(lattice, latticeExtra, grid)
 pacman::p_load(beeswarm)
 ```
+
+### citation
+
+Further details and examples can be found in the package author [website](http://www.cbs.dtu.dk/~eklund/beeswarm/)
 
 ### import data
 
