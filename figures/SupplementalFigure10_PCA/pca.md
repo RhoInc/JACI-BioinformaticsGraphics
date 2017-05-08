@@ -1,19 +1,21 @@
 PCA
 ================
 A Calatroni & J Wildfire
-27 February, 2017
+08 May, 2017
 
--   [set path](#set-path)
+-   [setup](#setup)
 -   [packages](#packages)
+-   [citation](#citation)
 -   [import data](#import-data)
 -   [subset data](#subset-data)
 -   [pca](#pca)
 -   [pca figure](#pca-figure)
 
-### set path
+### setup
 
 ``` r
 knitr::opts_knit$set(root.dir = '../..')
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = NA)
 ```
 
 ### packages
@@ -25,6 +27,28 @@ pacman::p_load(colorspace)
 pacman::p_load(reshape2)
 pacman::p_load(ggfortify)
 ```
+
+### citation
+
+``` r
+citation("ggfortify", auto = FALSE) %>% 
+  toBibtex()
+```
+
+    @Article{,
+      author = {Yuan Tang and Masaaki Horikoshi and Wenxuan Li},
+      title = {ggfortify: Unified Interface to Visualize Statistical Result of Popular R Packages},
+      journal = {The R Journal},
+      year = {2016},
+      url = {https://journal.r-project.org/},
+    }
+
+    @Manual{,
+      author = {Masaaki Horikoshi and Yuan Tang},
+      title = {ggfortify: Data Visualization Tools for Statistical Analysis Results},
+      year = {2016},
+      url = {https://CRAN.R-project.org/package=ggfortify},
+    }
 
 ### import data
 
@@ -51,11 +75,11 @@ names(dd_10)[4:7] <- c("1 mcg/mL \nEgg CD63pos","0.1  mcg/mL \nEgg CD63pos",
 prcomp(dd_10[,-c(1:3)], scale. = TRUE) %>% summary()
 ```
 
-    ## Importance of components:
-    ##                           PC1    PC2    PC3     PC4     PC5    PC6
-    ## Standard deviation     1.8621 1.0382 0.8835 0.66313 0.43314 0.2164
-    ## Proportion of Variance 0.5779 0.1797 0.1301 0.07329 0.03127 0.0078
-    ## Cumulative Proportion  0.5779 0.7575 0.8876 0.96093 0.99220 1.0000
+    Importance of components%s:
+                              PC1    PC2    PC3     PC4     PC5     PC6
+    Standard deviation     1.8611 1.0381 0.8835 0.66573 0.43399 0.21546
+    Proportion of Variance 0.5773 0.1796 0.1301 0.07387 0.03139 0.00774
+    Cumulative Proportion  0.5773 0.7569 0.8870 0.96087 0.99226 1.00000
 
 ### pca figure
 
@@ -80,4 +104,4 @@ autoplot( prcomp(dd_10[,-c(1:3)], scale. = TRUE), data=dd_10 , colour='trttrue',
   theme_minimal()
 ```
 
-![](pca_files/figure-markdown_github/unnamed-chunk-6-1.png)
+![](pca_files/figure-markdown_github/unnamed-chunk-7-1.png)
