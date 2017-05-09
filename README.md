@@ -51,3 +51,8 @@ Report using combining [code and results](https://github.com/RhoInc/JACI-Bioinfo
 ### Supplemental Figure 10 – Demonstration of Dimension Reduction Techniques with Egg Oral Immunotherapy data
 
 Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure10_PCA/pca.md) for the figure created using Immport OIT Data.
+
+### Supplemental Figure 11 – Network Diagram
+
+Report using combining [code and results](https://github.com/RhoInc/JACI-BioinformaticsGraphics/blob/master/figures/SupplementalFigure11_Network/NetworkCyto.md) for the figure.
+
