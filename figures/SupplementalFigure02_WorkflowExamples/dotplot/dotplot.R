@@ -10,7 +10,7 @@
 #' ### packages
 pacman::p_load(lattice, grid)
 pacman::p_load(tidyverse)
-pacman::p_load(pixiedust)
+pacman::p_load(pixiedust) # for pvalString
 
 #' ### create data
 set.seed(2016)
