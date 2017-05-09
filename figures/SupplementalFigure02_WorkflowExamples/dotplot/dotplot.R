@@ -65,22 +65,18 @@ stripplot(x~g, data=dd2,
             panel.points(dd$x,dd$y,...)
           })
 
-#' ### Annotate
+#' ### Expand
 #+ fig.width=3, fig.height=4
-pal   <- c("gray35","gray50","gray65","gray80","white")
-ind   <- c(1,0.1,0.05,0.01,0.001,0)
 
-stripplot(x~g, data=dd2,
+stripplot(x~g|f, data=dd3,
           col='gray70',
           horizontal = F,
           scales=list(draw=F), 
+          between = list(x=0.5),
           xlab=NULL, ylab=NULL,
-          par.settings = list(axis.line = list(col = 0)),
-          legend = list(top=list(fun=grid::textGrob("P-Value", x=1.06)),
-                        right = list(fun = draw.colorkey,
-                                     args = list(key = list(col = rev(pal), at = seq(0,1,length=6), 
-                                                            labels=list(at=seq(0,1,length=6),labels=ind)), 
-                                                 draw = FALSE))),
+          par.settings = list(axis.line = list(col = 0),
+                              strip.background=list(col="gray90")),
+         
           panel = function(x,y,...){
             
             t <- t.test(y~x)
@@ -88,25 +84,18 @@ stripplot(x~g, data=dd2,
             e <- format(t$estimate, digits = 1, nsmall = 1)
             i <- format(t$conf.int, digits = 1, nsmall = 1)
             d <- format(diff(t$estimate), digits = 1, nsmall = 1)
-            
-            col.ind <- cut(t$p.value,breaks=ind,labels=FALSE)               
-            panel.fill(col = pal[col.ind])
-
-            dd <-  beeswarm(y~x,method='swarm',do.plot=F,spacing=1.2,...)
+          
+            dd <-  beeswarm(y~x,method='swarm',do.plot=F,spacing=1.8,...)
             panel.points(dd$x,dd$y,...)
             panel.segments(x0=seq(0.75,1.75), y0=m, x1=seq(1.25,2.25), y1=m)
             panel.xyplot(c(1,2),m, type=c("a"), col='black')
-            
-            grid.text(e,x=unit(c(1,2),"native"),y=unit(m,"native"),hjust=0.5,vjust=-0.5,gp=gpar(cex=0.7)) 
-            
-            grid.text(paste(d," (",i[1]," , ",i[2],") \n p ", pvalString(t$p.value),sep=""),
-                      x=0.50,y=0.95,hjust=0.5,gp=gpar(cex=0.7,fontface=ifelse(t$p.value<0.05,2,1)))
-            
-            
           })
 
-#' ### Expand
+#' ### Annotate
 #+ fig.width=5, fig.height=4
+pal   <- c("gray35","gray50","gray65","gray80","white")
+ind   <- c(1,0.1,0.05,0.01,0.001,0)
+
 stripplot(x~g|f, data=dd3,
           col='gray70',
           horizontal = F,
