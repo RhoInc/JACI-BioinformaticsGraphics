@@ -1,7 +1,7 @@
 Histograms
 ================
 A Calatroni & J Wildfire
-08 May, 2017
+09 May, 2017
 
 -   [packages](#packages)
 -   [create data](#create-data)
@@ -89,7 +89,8 @@ histogram( ~x, data=dd2, groups=g,
 histogram( ~x | f , data=dd3, groups=g, 
            breaks=30, as.table=T,
            scales=list(draw=F),
-           between = list(y=0.5),
+           layout = c(2,1),
+           between = list(x=0.5),
            ylim=c(0,13),
            xlab=NULL, ylab=NULL,
            par.settings = list(axis.line = list(col = 0),
@@ -121,7 +122,8 @@ ind   <- c(1,0.1,0.05,0.01,0.001,0)
 histogram( ~x | f, data=dd3, groups=g, 
            breaks=30, as.table=T,
            scales=list(draw=F),
-           between = list(y=0.5),
+           layout = c(2,1),
+           between = list(x=0.5),
            ylim=c(0,13),
            xlab=NULL, ylab=NULL,
            par.settings = list(axis.line = list(col = 0),
