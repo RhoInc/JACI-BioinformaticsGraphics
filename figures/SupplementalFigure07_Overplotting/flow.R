@@ -134,3 +134,26 @@ ggplot(df2,aes(FITC.A,PE.A)) +
   theme_minimal() + 
   theme(aspect.ratio=1)+
   facet_grid(arm_name~planned_visit_name)
+
+#+ include = FALSE
+# Figure PNG for the Manuscript
+png("figures/SupplementalFigure07_Overplotting/flow.png", width=7, height=7, units = 'in', res = 600)
+df2 <- df1 %>% unnest(data) %>% filter(FITC.A >0, PE.A>0)
+ggplot(df2,aes(FITC.A,PE.A)) +
+  geom_point(col='gray50', size=0.01, alpha=1/100) +
+  stat_density2d(aes(fill = ..level..), contour=TRUE, color='gray50', geom="polygon") +
+  scale_fill_distiller(palette = "Blues", direction=1, guide=FALSE) + 
+  scale_y_log10(
+    breaks = trans_breaks("log10", function(x) 10^x),
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
+  scale_x_log10(
+    breaks = trans_breaks("log10", function(x) 10^x),
+    labels = trans_format("log10", math_format(10^.x)),
+    limits = c(1,1e+05)) +
+  labs(x="CD63", 
+       y="CD203c") +
+  theme_minimal() + 
+  theme(aspect.ratio=1)+
+  facet_grid(arm_name~planned_visit_name)
+dev.off()

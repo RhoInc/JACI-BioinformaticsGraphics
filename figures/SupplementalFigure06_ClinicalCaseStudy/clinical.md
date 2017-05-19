@@ -1,7 +1,7 @@
 Clinical
 ================
 A Calatroni & J Wildfire
-08 May, 2017
+19 May, 2017
 
 -   [set path](#set-path)
 -   [packages](#packages)
@@ -57,7 +57,7 @@ xyplot(value ~ factor(visno) | trttrue, data=dd %>% filter(variable == 'cd63pos2
        ylab = "% CD63 Expression \n 1 mcg/mL Egg",
        panel = function(x,y,...){
          bs <- beeswarm(round(y,0)~x, do.plot=F, corral='none', side=1, spacing=4)
-         panel.grid(h=-1,v=0)
+         panel.grid(h=-1,v=0, col='gray70')
          panel.segments(seq(0.75,1.75,1),tapply(y,x,mean,na.rm=T),
                         seq(1.25,2.25,1),tapply(y,x,mean,na.rm=T),
                         lwd=2)
@@ -100,12 +100,10 @@ xyplot(value ~ factor(visno) | trttrue, data=dd %>% filter(variable == 'cd63pos2
          grid.text(paste(d," (",i[1],",",i[2],")",sep=""),
                    x=0.50,y=0.97,hjust=0.5,gp=gpar(cex=0.7,fontface=ifelse(t$p.value<0.05,2,1)))
          
-         panel.grid(h=-1,v=0)
+         panel.grid(h=-1,v=0, col='gray70')
          panel.xyplot(x,y,...)
          
          bs <- beeswarm(round(y,0)~x, do.plot=F, corral='none', side=1, spacing=4)
-
-         panel.grid(h=-1,v=0)
          panel.segments(seq(0.75,1.75,1),tapply(y,x,mean,na.rm=T),
                         seq(1.25,2.25,1),tapply(y,x,mean,na.rm=T),
                         lwd=2)
@@ -151,11 +149,10 @@ useOuterStrips(
            grid.text(paste(d," (",i[1],",",i[2],")",sep=""),
                      x=0.50,y=0.97,hjust=0.5,gp=gpar(cex=0.7,fontface=ifelse(t$p.value<0.05,2,1)))
            
-           panel.grid(h=-1,v=0)
+           panel.grid(h=-1,v=0, col='gray70')
            panel.xyplot(x,y,...)
            
            bs <- beeswarm(round(y,0)~x, do.plot=F, corral='none', side=1, spacing=2)
-           panel.grid(h=-1,v=0)
            panel.segments(seq(0.75,1.75,1),tapply(y,x,mean,na.rm=T),
                           seq(1.25,2.25,1),tapply(y,x,mean,na.rm=T),
                           lwd=2)
@@ -164,7 +161,7 @@ useOuterStrips(
 )
 ```
 
-![](clinical_files/figure-markdown_github/unnamed-chunk-6-1.png)
+![](clinical_files/figure-markdown_github/unnamed-chunk-7-1.png)
 
 ### figure 4
 
@@ -201,11 +198,10 @@ xyplot(value ~ factor(visno) | trttrue * reorder(label,value), data=dd,
          grid.text(paste(d," (",i[1],",",i[2],")",sep=""),
                    x=0.50,y=0.97,hjust=0.5,gp=gpar(cex=0.7,fontface=ifelse(t$p.value<0.05,2,1)))
          
-         panel.grid(h=-1,v=0)
+         panel.grid(h=-1,v=0, col='gray70')
          panel.xyplot(x,y,...)
          
          bs <- beeswarm(round(y,0)~x, do.plot=F, corral='none', side=1, spacing=2)
-         panel.grid(h=-1,v=0)
          panel.segments(seq(0.75,1.75,1),tapply(y,x,mean,na.rm=T),
                         seq(1.25,2.25,1),tapply(y,x,mean,na.rm=T),
                         lwd=2)
@@ -214,4 +210,4 @@ xyplot(value ~ factor(visno) | trttrue * reorder(label,value), data=dd,
 )
 ```
 
-![](clinical_files/figure-markdown_github/unnamed-chunk-7-1.png)
+![](clinical_files/figure-markdown_github/unnamed-chunk-8-1.png)

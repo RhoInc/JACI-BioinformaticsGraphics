@@ -58,3 +58,15 @@ Heatmap(df, km=3,
         bottom_annotation = ha_boxplot,
         bottom_annotation_height = unit(0.15, "npc")
 ) + ha
+
+#+ include = FALSE
+# Figure PDF for the Manuscript
+pdf("figures/SupplementalFigure09_Heatmap/levelplot.pdf", width=6, height=7)
+Heatmap(df, km=3,
+        col = colorRamp2(seq(0, 100, length = 11), blues_fun(11)),
+        column_names_gp = gpar(font=2, col =  c(rep('#7FC97F',4),rep('#BEAED4',2))),
+        name = "CD63+ \nBasophils (%)",
+        bottom_annotation = ha_boxplot,
+        bottom_annotation_height = unit(0.15, "npc")
+) + ha
+dev.off()

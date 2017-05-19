@@ -1,10 +1,11 @@
 Scatterplot Flow
 ================
 A Calatroni & J Wildfire
-01 March, 2017
+19 May, 2017
 
 -   [set path](#set-path)
 -   [packages](#packages)
+-   [citation](#citation)
 -   [import data](#import-data)
 -   [Figure 1](#figure-1)
 -   [Figure 2](#figure-2)
@@ -18,6 +19,7 @@ A Calatroni & J Wildfire
 
 ``` r
 knitr::opts_knit$set(root.dir = '../..')
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, comment = NA)
 ```
 
 ### packages
@@ -26,6 +28,22 @@ knitr::opts_knit$set(root.dir = '../..')
 pacman::p_load(tidyverse, rio)
 pacman::p_load(scales)
 ```
+
+### citation
+
+``` r
+citation("ggplot2", auto = FALSE) %>% 
+  toBibtex()
+```
+
+    @Book{,
+      author = {Hadley Wickham},
+      title = {ggplot2: Elegant Graphics for Data Analysis},
+      publisher = {Springer-Verlag New York},
+      year = {2009},
+      isbn = {978-0-387-98140-6},
+      url = {http://ggplot2.org},
+    }
 
 ### import data
 
@@ -44,7 +62,7 @@ ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +
   theme(aspect.ratio=1)
 ```
 
-![](flow_files/figure-markdown_github/unnamed-chunk-4-1.png)
+![](flow_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
 ### Figure 2
 
@@ -65,7 +83,7 @@ ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +
   theme(aspect.ratio=1)
 ```
 
-![](flow_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![](flow_files/figure-markdown_github/unnamed-chunk-6-1.png)
 
 ### Figure 3
 
@@ -86,7 +104,7 @@ ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +
   theme(aspect.ratio=1)
 ```
 
-![](flow_files/figure-markdown_github/unnamed-chunk-6-1.png)
+![](flow_files/figure-markdown_github/unnamed-chunk-7-1.png)
 
 ### Figure 4
 
@@ -107,15 +125,13 @@ b <- ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +
 ggMarginal(b, type = "histogram", fill = "gray70")
 ```
 
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](flow_files/figure-markdown_github/unnamed-chunk-7-1.png)
+![](flow_files/figure-markdown_github/unnamed-chunk-8-1.png)
 
 ``` r
 ggMarginal(b, type = "density")
 ```
 
-![](flow_files/figure-markdown_github/unnamed-chunk-7-2.png)
+![](flow_files/figure-markdown_github/unnamed-chunk-8-2.png)
 
 ### Figure 5
 
@@ -138,7 +154,7 @@ ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +
   theme(aspect.ratio=1)
 ```
 
-![](flow_files/figure-markdown_github/unnamed-chunk-8-1.png)
+![](flow_files/figure-markdown_github/unnamed-chunk-9-1.png)
 
 ### Figure 6
 
@@ -161,7 +177,7 @@ ggplot(df1$data[[2]] %>% filter(FITC.A >0, PE.A>0),aes(FITC.A,PE.A)) +
   theme(aspect.ratio=1)
 ```
 
-![](flow_files/figure-markdown_github/unnamed-chunk-9-1.png)
+![](flow_files/figure-markdown_github/unnamed-chunk-10-1.png)
 
 ### Figure 7
 
@@ -186,8 +202,4 @@ ggplot(df2,aes(FITC.A,PE.A)) +
   facet_grid(arm_name~planned_visit_name)
 ```
 
-    ## Warning: Removed 3 rows containing non-finite values (stat_density2d).
-
-    ## Warning: Removed 3 rows containing missing values (geom_point).
-
-![](flow_files/figure-markdown_github/unnamed-chunk-10-1.png)
+![](flow_files/figure-markdown_github/unnamed-chunk-11-1.png)

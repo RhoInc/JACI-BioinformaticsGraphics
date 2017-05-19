@@ -1,7 +1,7 @@
 Levelplot
 ================
 A Calatroni & J Wildfire
-08 May, 2017
+19 May, 2017
 
 -   [setup](#setup)
 -   [packages](#packages)

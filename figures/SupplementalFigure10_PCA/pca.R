@@ -59,3 +59,25 @@ autoplot( prcomp(dd_10[,-c(1:3)], scale. = TRUE), data=dd_10 , colour='trttrue',
   guides(fill = FALSE) +
   theme_minimal()
 
+#+ include = FALSE
+# Figure PDF for the Manuscript
+pdf("figures/SupplementalFigure10_PCA/pca.pdf", width=7, height=6.5)
+autoplot( prcomp(dd_10[,-c(1:3)], scale. = TRUE), data=dd_10 , colour='trttrue',
+          frame = TRUE,
+          frame.type = 't',
+          frame.level = 0.80,
+          loadings = TRUE, 
+          loadings.colour = 'gray50',
+          loadings.label = TRUE,
+          loadings.label.colour = 'gray50',
+          loadings.label.size = 3,
+          loadings.label.hjust = 0, 
+          loadings.label.vjust = 0.5) +
+  scale_color_brewer(palette="Set1") +
+  labs(#title = "Biplot Month 10",
+       color = "Treatment Group",
+       x = "First PC (58% explained var.)",
+       y = "Second PC (18%)") +
+  guides(fill = FALSE) +
+  theme_minimal()
+dev.off()
