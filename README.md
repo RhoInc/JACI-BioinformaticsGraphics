@@ -1,5 +1,5 @@
 ## Overview
-This repository contains supplemental materials for "Graphic Depiction of Bioinformatics Data" paper in the Journal of Allergy and Clinical Immunology including source code, data and results for figures used in the manuscript, like the ones shown below.
+This repository contains supplemental materials for [Graphic Depiction of Bioinformatics Data](https://www.jacionline.org/article/S0091-6749(17)31019-9/abstract) published in the Journal of Allergy and Clinical Immunology. This repository includes source code, data and results for figures used in the manuscript, like the ones shown below.
 
 ![Figure Collage](collage.png) 
 
